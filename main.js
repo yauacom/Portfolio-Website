@@ -22,11 +22,11 @@ if (navClose) {
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll(".nav__link");
 
-const linkClicked = () => {
+const linkClickHandle = () => {
   navMenu.classList.remove("show-menu");
 };
 
-navLink.forEach((link) => link.addEventListener("click", linkClicked));
+navLink.forEach((link) => link.addEventListener("click", linkClickHandle));
 
 /*==================== ACCORDION SKILLS ====================*/
 
