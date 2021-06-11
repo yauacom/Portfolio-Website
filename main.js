@@ -28,7 +28,27 @@ const linkClickHandle = () => {
 
 navLink.forEach((link) => link.addEventListener("click", linkClickHandle));
 
-/*==================== QUALIFICATION TABS ====================*/
+/*==================== EXPERIENCE TABS ====================*/
+const expTabs = document.querySelectorAll("[data-target]"),
+  expTabContents = document.querySelectorAll("[data-content");
+
+expTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = document.querySelector(tab.dataset.target);
+
+    expTabContents.forEach((tabContent) => {
+      tabContent.classList.remove("experience__active");
+    });
+
+    target.classList.add("experience__active");
+
+    expTabs.forEach((tab) => {
+      tab.classList.remove("experience__active");
+    });
+
+    tab.classList.add("experience__active");
+  });
+});
 
 /*==================== SERVICES MODAL ====================*/
 
