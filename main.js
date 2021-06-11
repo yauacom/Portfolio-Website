@@ -28,8 +28,6 @@ const linkClickHandle = () => {
 
 navLink.forEach((link) => link.addEventListener("click", linkClickHandle));
 
-/*==================== ACCORDION SKILLS ====================*/
-
 /*==================== QUALIFICATION TABS ====================*/
 
 /*==================== SERVICES MODAL ====================*/
