@@ -323,6 +323,10 @@ button {
   font-size: var(--big-font-size);
 }
 
+.home__title-color {
+  color: var(--first-color);
+}
+
 .home__subtitle {
   font-size: var(--h3-font-size);
   color: var(--text-color);
@@ -407,27 +411,91 @@ button {
 
 /*==================== SKILLS ====================*/
 .skills__container {
-  row-gap: 2rem;
+  row-gap: 0;
 }
 
-.skills__subtitle {
+.skills__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-2-5);
+  cursor: pointer;
+}
+
+.skills__icon,
+.skills__arrow {
+  font-size: 2rem;
   color: var(--first-color);
-  margin-bottom: var(--mb-3);
+}
+
+.skills__icon {
+  margin-right: var(--mb-0-75);
+}
+
+.skills__title {
+  font-size: var(--h3-font-size);
+}
+
+/* .skills__subtitle {
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+} */
+
+.skills__arrow {
+  margin-left: auto;
+  transition: 0.4s;
+}
+
+.skills__header:hover .skills__arrow {
+  transform: translateY(0.25rem);
+}
+
+.skills__list {
+  row-gap: 1.5rem;
+  padding-left: 2.7rem;
+}
+
+.skills__titles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--mb-0-5);
 }
 
 .skills__name {
-  display: inline-block;
-  font-size: var(--small-font-size);
-  margin-right: var(--mb-2);
-  margin-bottom: var(--mb-3);
-  padding: 0.25rem 0.5rem;
-  background-color: #fff;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.skills__bar,
+.skills__percentage {
+  height: 5px;
   border-radius: 0.25rem;
 }
 
-.skills__name:hover {
+.skills__bar {
+  background-color: var(--first-color-lighter);
+}
+
+.skills__percentage {
+  display: block;
   background-color: var(--first-color);
-  color: #fff;
+}
+
+.skills__close .skills__list {
+  height: 0;
+  overflow: hidden;
+}
+
+.skills__open .skills__list {
+  height: max-content;
+  margin-bottom: var(--mb-2-5);
+}
+
+.skills__open .skills__arrow {
+  transform: rotate(-180deg);
+}
+
+.skills__open .skills__header:hover .skills__arrow {
+  transform: rotate(-180deg) translateY(0.25rem);
 }
 
 .skills__img img {
@@ -769,6 +837,10 @@ button {
   .contact__container,
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills__img img {
+    width: 100%;
   }
 
   .experience__sections {

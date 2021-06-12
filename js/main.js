@@ -28,6 +28,35 @@ const linkClickHandle = () => {
 
 navLink.forEach((link) => link.addEventListener("click", linkClickHandle));
 
+/*==================== SKILLS ====================*/
+// Open-close skill contents
+const skillsContent = document.getElementsByClassName("skills__content"),
+  skillsHeader = document.querySelectorAll(".skills__header");
+
+function toggleSkills() {
+  let itemClass = this.parentNode.className;
+
+  for (i = 0; i < skillsContent.length; i++) {
+    skillsContent[i].className = "skills__content skills__close";
+  }
+
+  if (itemClass === "skills__content skills__close") {
+    this.parentNode.className = "skills__content skills__open";
+  }
+}
+
+skillsHeader.forEach((header) => {
+  header.addEventListener("click", toggleSkills);
+});
+
+// Percentage bar for skills
+const skillData = document.querySelectorAll(".skills__data");
+
+skillData.forEach((skill) => {
+  const skillPercentage = skill.firstElementChild.lastElementChild.innerText;
+  skill.lastElementChild.firstElementChild.style.width = skillPercentage;
+});
+
 /*==================== EXPERIENCE TABS ====================*/
 const expTabs = document.querySelectorAll("[data-target]"),
   expTabContents = document.querySelectorAll("[data-content");
