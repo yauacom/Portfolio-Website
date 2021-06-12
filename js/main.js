@@ -79,8 +79,6 @@ expTabs.forEach((tab) => {
   });
 });
 
-/*==================== SERVICES MODAL ====================*/
-
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiper = new Swiper(".portfolio__container", {
   cssMode: true,
@@ -172,3 +170,57 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "40px",
+  duration: 2000,
+  reset: true,
+});
+
+// Sections
+sr.reveal(".section__title", {});
+sr.reveal(".section__subtitle", {});
+
+// Home Section
+sr.reveal(".home__title", {});
+sr.reveal(".home__subtitle", {});
+sr.reveal(".home__description", {});
+sr.reveal(".home__info .button", { delay: 200 });
+sr.reveal(".home__social-icon", { origin: "left", delay: 200, interval: 200 });
+sr.reveal(".home__scroll", { delay: 400 });
+sr.reveal(".home__img", { delay: 200 });
+
+// About Section
+sr.reveal(".about__img", { delay: 200 });
+sr.reveal(".about__description", { delay: 300 });
+sr.reveal(".about__buttons", { delay: 400 });
+
+// Skills Section
+sr.reveal(".skills__header", { delay: 200, interval: 200 });
+sr.reveal(".skills__data", { delay: 400, interval: 200 });
+sr.reveal(".skills__img", { delay: 800 });
+
+// Experience Section
+sr.reveal(".experience__button", { delay: 200, interval: 200 });
+sr.reveal(".experience__description", { delay: 300, interval: 200 });
+sr.reveal(".experience__timeline", {
+  origin: "bottom",
+  delay: 200,
+  interval: 200,
+});
+
+//Portfolio Section
+sr.reveal(".portfolio__container", { delay: 200 });
+
+//Contact Section
+sr.reveal(".contact__info", { delay: 200, interval: 200 });
+sr.reveal(".contact__content", { delay: 200, interval: 200 });
+sr.reveal(".contact__button", { delay: 200 });
+
+//Footer Section
+sr.reveal(".footer__title", {});
+sr.reveal(".footer__subtitle", {});
+sr.reveal(".footer__link", { delay: 200, interval: 200 });
+sr.reveal(".footer__social", { delay: 600, interval: 200 });
