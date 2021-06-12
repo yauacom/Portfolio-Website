@@ -500,6 +500,7 @@ button {
 
 .skills__img img {
   border-radius: 0.5rem;
+  background-color: var(--input-color);
 }
 
 /*==================== Experience ====================*/
